@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+.flexB {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button.view-Modal-Btn {
+  background-color: red;
+  color: #fff;
+  padding: 1em;
+  border-radius: 1rem;
+  transition: transform 500ms;
+}
+
+button.view-Modal-Btn:hover {
+  transform: translateY(-9px);
+}
+
+button.close_btn {
+  position: absolute;
+  width: 25px;
+  right: 0.3rem;
+}
+
+.view-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms;
+}
+
+.view-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 500ms;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.268);
+  position: absolute;
+  inset: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: min(80%, 550px);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  min-height: 300px;
+}
+
+.screen_image {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.seat {
+  flex-direction: column;
+}
+
+.seat_image {
+  width: 20px;
+}
+
+.balcony_first__row {
+  justify-content: space-between;
+}
+
+.balcony-h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+
+.ODC-h1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35px);
+  font-size: 1.8rem;
+}
+
+.box_h1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35px);
+  font-size: 1.8rem;
+}
+
+:is(
+    .balcony_second__row,
+    .balcony_third__row,
+    .balcony_fourth__row,
+    .odc_first__row,
+    .odc_second__row,
+    .odc_third__row,
+    .odc_fourth__row,
+    .odc_fifth__row,
+    .box
+  ) {
+  justify-content: center;
+  gap: clamp(0.1rem, 4vw, 2rem);
+}
+
+.section + .section {
+  margin-top: 3rem;
+}
+
+.row + .row {
+  margin-top: 0.2rem;
+}
