@@ -49,6 +49,8 @@ button.close_btn {
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms;
+  position: absolute;
+  inset: 0;
 }
 
 .view-modal.active {
